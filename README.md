@@ -2,7 +2,7 @@
 |api|method|frontend|backend|
 |:---:|:---:|:---:|:---:|
 |/send_code|post|[CodeInfo](#CodeInfo)|[CodeResult](#CodeResult)|
-|/waterfall|post|/|[WaterFall](#WaterFall)|
+|/waterfall|get|/|[WaterFall](#WaterFall)|
 |/subscribe|post|[SubscribeInfo](#SubscribeInfo)|[SubscribeResult](#SubscribeResult)|
 |/post/:post_code|get|/|[PostContent](#PostContent)|
 |/assets/:source_link|get|/|[SourceContent](#SourceContent)|
