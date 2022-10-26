@@ -72,7 +72,7 @@ struct PostContent {
 }
 ```
 
-#### SourcreContent
+#### SourceContent
 ``` rust
 struct SourceContent {
   success: bool,
