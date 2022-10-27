@@ -23,7 +23,7 @@ struct CodeInfo {
 #### CodeResult
 ``` rust
 struct CodeResult {
-  success: bool,
+  err_code: u32,
   message: String,
   access_token: String,
 }
@@ -32,7 +32,7 @@ struct CodeResult {
 #### WaterFall
 ``` rust
 struct WaterFall {
-  success: bool,
+  err_code: u32,
   message: String,
   items: Vec<WaterFallItem>,
 }
@@ -49,6 +49,7 @@ struct WaterFallItem {
 ``` rust
 struct SubscribeInfo {
   school_code: Vec<u32>,
+  open_id: String,
   access_token: String,
 }
 ```
@@ -56,7 +57,7 @@ struct SubscribeInfo {
 #### SubscribeResult
 ``` rust
 struct SubscribeResult {
-  success: bool,
+  err_code: u32,
   message: String,
 }
 ```
@@ -75,7 +76,7 @@ struct PostContent {
 #### SourceContent
 ``` rust
 struct SourceContent {
-  success: bool,
+  err_code: u32,
   message: String,
   content: Vec<u8>,
 }
