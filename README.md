@@ -13,6 +13,10 @@ struct CodeInfo {
   // code from wx.login()
   // if access_token cached, send null String.
   code: String,
+    
+  // open_id received from third party server,
+  // fill by null String if is first request.
+  open_id: String,
 
   // access_token cached from third party server
   // send null String if no access_token cached.
@@ -25,6 +29,7 @@ struct CodeInfo {
 struct CodeResult {
   err_code: i32,
   message: String,
+  open_id: String,
   access_token: String,
 }
 ```
