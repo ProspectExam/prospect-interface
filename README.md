@@ -84,7 +84,7 @@ struct SubscribeResult {
 #### UniversityResult
 ``` rust
 struct UniversityResult {
-  std::collections::HashMap<String, u32>,
+  universities: std::collections::HashMap<String, u32>,
 }
 ```
 
@@ -98,7 +98,7 @@ struct GetDepartmentInfo {
 #### DepartmentResult
 ``` rust
 struct DepartmentInfo {
-  std::collections::HashMap<String, u32>,
+  departments: std::collections::HashMap<String, u32>,
 }
 ```
 
