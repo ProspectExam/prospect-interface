@@ -4,6 +4,8 @@
 |/send_code|post|[CodeInfo](#CodeInfo)|[CodeResult](#CodeResult)|
 |/waterfall|get|/|[WaterFall](#WaterFall)|
 |/subscribe|post|[SubscribeInfo](#SubscribeInfo)|[SubscribeResult](#SubscribeResult)|
+|/get_university_info|get|/|[UniversityResult](#UniversityResult)|
+|/get_department|post|[GetDepartmentInfo](#GetDepartmentInfo)|[DepartmentResult](#DepartmentInfo)|
 |/post/:post_code|get|/|[PostContent](#PostContent)|
 |/assets/:source_link|get|/|[SourceContent](#SourceContent)|
 
@@ -65,7 +67,8 @@ struct WaterFallItem {
 #### SubscribeInfo
 ``` rust
 struct SubscribeInfo {
-  school_code: Vec<u32>,
+  school_code: u32,
+  department_code: u32,
   open_id: String,
   access_token: String,
 }
@@ -76,6 +79,26 @@ struct SubscribeInfo {
 struct SubscribeResult {
   err_code: i32,
   message: String,
+}
+```
+#### UniversityResult
+``` rust
+struct UniversityResult {
+  std::collections::HashMap<String, u32>,
+}
+```
+
+#### GetDepartmentInfo
+``` rust
+struct GetDepartmentInfo {
+  university_code: u32,
+}
+```
+
+#### DepartmentResult
+``` rust
+struct DepartmentInfo {
+  std::collections::HashMap<String, u32>,
 }
 ```
 
