@@ -4,7 +4,7 @@
 |/send_code|post|[CodeInfo](#CodeInfo)|[CodeResult](#CodeResult)|
 |/waterfall|get|/|[WaterFall](#WaterFall)|
 |/subscribe|post|[SubscribeInfo](#SubscribeInfo)|[SubscribeResult](#SubscribeResult)|
-|/get_university_info|get|/|[UniversityResult](#UniversityResult)|
+|/get_university|get|/|[UniversityResult](#UniversityResult)|
 |/get_department|post|[GetDepartmentInfo](#GetDepartmentInfo)|[DepartmentResult](#DepartmentInfo)|
 |/post/:post_code|get|/|[PostContent](#PostContent)|
 |/assets/:source_link|get|/|[SourceContent](#SourceContent)|
@@ -84,6 +84,8 @@ struct SubscribeResult {
 #### UniversityResult
 ``` rust
 struct UniversityResult {
+  err_code: i32,
+  message: String,
   universities: std::collections::HashMap<String, u32>,
 }
 ```
@@ -98,6 +100,8 @@ struct GetDepartmentInfo {
 #### DepartmentResult
 ``` rust
 struct DepartmentInfo {
+  err_code: i32,
+  message: String,
   departments: std::collections::HashMap<String, u32>,
 }
 ```
