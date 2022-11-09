@@ -5,7 +5,7 @@
 |/waterfall|get|/|[WaterFall](#WaterFall)|
 |/subscribe|post|[SubscribeInfo](#SubscribeInfo)|[SubscribeResult](#SubscribeResult)|
 |/get_university|get|/|[UniversityResult](#UniversityResult)|
-|/get_department|post|[GetDepartmentInfo](#GetDepartmentInfo)|[DepartmentResult](#DepartmentInfo)|
+|/get_department|post|[GetDepartmentInfo](#GetDepartmentInfo)|[DepartmentResult](#DepartmentResult)|
 |/post/:post_code|get|/|[PostContent](#PostContent)|
 |/assets/:source_link|get|/|[SourceContent](#SourceContent)|
 
@@ -99,7 +99,7 @@ struct GetDepartmentInfo {
 
 #### DepartmentResult
 ``` rust
-struct DepartmentInfo {
+struct DepartmentResult {
   err_code: i32,
   message: String,
   departments: std::collections::HashMap<String, u32>,
