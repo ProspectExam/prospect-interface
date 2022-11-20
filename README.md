@@ -111,7 +111,7 @@ struct GetSubscribeInfo {
 ``` rust
 struct GetSubscribeResult {
   err_code: i32,
-  info: std::collections::HashMap<String, Vec<String>>,
+  info: std::collections::HashMap<u32, Vec<u32>>,
 }
 ```
 
@@ -121,7 +121,7 @@ struct GetSubscribeResult {
 struct UniversityResult {
   err_code: i32,
   message: String,
-  universities: std::collections::HashMap<String, u32>,
+  universities: std::collections::HashMap<u32, String>,
 }
 ```
 
@@ -137,7 +137,7 @@ struct GetDepartmentInfo {
 struct DepartmentResult {
   err_code: i32,
   message: String,
-  departments: std::collections::HashMap<String, u32>,
+  departments: std::collections::HashMap<u32, String>,
 }
 ```
 
