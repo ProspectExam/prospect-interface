@@ -4,6 +4,7 @@
 |/send_code|post|[CodeInfo](#CodeInfo)|[CodeResult](#CodeResult)|
 |/waterfall|get|/|[WaterFall](#WaterFall)|
 |/subscribe|post|[SubscribeInfo](#SubscribeInfo)|[SubscribeResult](#SubscribeResult)|
+|/get_user_subscribe|post|[GetSubscribeInfo](#GetSubscribeInfo)|[GetSubscribeResult](#GetSubscribeResult)|
 |/get_university|get|/|[UniversityResult](#UniversityResult)|
 |/get_department|post|[GetDepartmentInfo](#GetDepartmentInfo)|[DepartmentResult](#DepartmentResult)|
 |/post/:post_code|get|/|[PostContent](#PostContent)|
@@ -67,21 +68,55 @@ struct WaterFallItem {
 #### SubscribeInfo
 ``` rust
 struct SubscribeInfo {
-  school_code: u32,
-  department_code: u32,
+  info: Vec<SubscribeDetail>,
   open_id: String,
   access_token: String,
 }
 ```
 
+##### SubscribeDetail
+
+``` rust
+struct SubscribeDetail {
+  school_code: u32,
+  department_code: u32,
+  oper: u16,
+}
+```
+
+oper:
+
+- 0: 订阅
+- 1: 取消订阅
+
 #### SubscribeResult
+
 ``` rust
 struct SubscribeResult {
   err_code: i32,
   message: String,
 }
 ```
+#### GetSubscribeInfo
+
+``` rust
+struct GetSubscribeInfo {
+  access_token: String,
+  open_id: String,
+}
+```
+
+#### GetSubscribeResult
+
+``` rust
+struct GetSubscribeResult {
+  err_code: i32,
+  info: std::collections::HashMap<String, Vec<String>>,
+}
+```
+
 #### UniversityResult
+
 ``` rust
 struct UniversityResult {
   err_code: i32,
