@@ -61,7 +61,7 @@ struct WaterFallItem {
   // all format of link is URL.
   img_source_link: String,
   title: String,
-  post_id: u64,
+  post_id: String,
 }
 ```
 
